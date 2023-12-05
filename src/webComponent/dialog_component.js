@@ -7,14 +7,10 @@ class DialogComponent extends HTMLElement {
     const trigger = this.getAttribute('trigger')
     const target = this.getAttribute('target')
 
-    // let dialogChildren = [...this.children]
-    // dialogChildren = dialogChildren[0].outerHTML
-
     let dialogChildren = document.getElementById(id).firstChild.cloneNode(true)
     dialogChildren = dialogChildren.innerHTML
-    // let dialogContent = dialogChildren.
 
-    console.log('kid', dialogChildren);
+    console.log('dialogChildren', dialogChildren);
     
     const dialogContent = `
       <dialog id="${target}">
@@ -39,9 +35,6 @@ class DialogComponent extends HTMLElement {
     })
     
     closeButton.addEventListener('click', () => dialog.close())
-
-    // console.log('this', this);
-    // this.outerHTML = this.innerHTML
   }
 }
 
